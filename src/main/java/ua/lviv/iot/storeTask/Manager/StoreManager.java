@@ -7,37 +7,37 @@ import ua.lviv.iot.storeTask.Model.AgeGroup;
 
 public class StoreManager {
 
-	private List<AbstractProduct> productsForSearch = new LinkedList<>();
-	AbstractProduct abstractProduct;
+  private List<AbstractProduct> productsForSearch = new LinkedList<>();
+  AbstractProduct abstractProduct;
 
-	public List<AbstractProduct> findByPrice(double priceInUAH) {
+  public List<AbstractProduct> findByPrice(double priceInUAH) {
 
-		List<AbstractProduct> foundProducts = new LinkedList<>();
-		for (AbstractProduct currentProduct : this.productsForSearch) {
-			if (currentProduct.getPriceInUAH() > priceInUAH) {
-				foundProducts.add(currentProduct);
-			}
-		}
+    List<AbstractProduct> foundProducts = new LinkedList<>();
+    for (AbstractProduct currentProduct : this.productsForSearch) {
+      if (currentProduct.getPriceInUAH() > priceInUAH) {
+        foundProducts.add(currentProduct);
+      }
+    }
 
-		return foundProducts;
-	}
+    return foundProducts;
+  }
 
-	public List<AbstractProduct> findForAgeGroup(AgeGroup ageGroup) {
+  public List<AbstractProduct> findForAgeGroup(AgeGroup ageGroup) {
 
-		List<AbstractProduct> foundProducts = new LinkedList<>();
-		for (AbstractProduct currentProduct : this.productsForSearch) {
-			if (currentProduct.getAgeGroup() == ageGroup) {
-				foundProducts.add(currentProduct);
-			}
-		}
-		return foundProducts;
-	}
+    List<AbstractProduct> foundProducts = new LinkedList<>();
+    for (AbstractProduct currentProduct : this.productsForSearch) {
+      if (currentProduct.getAgeGroup() == ageGroup) {
+        foundProducts.add(currentProduct);
+      }
+    }
+    return foundProducts;
+  }
 
-	public void addproduct(AbstractProduct product) {
-		this.productsForSearch.add(product);
-	}
+  public void addproduct(AbstractProduct product) {
+    this.productsForSearch.add(product);
+  }
 
-	public void addproducts(List<AbstractProduct> productsToAdd) {
-		this.productsForSearch.addAll(productsToAdd);
-	}
+  public void addproducts(List<AbstractProduct> productsToAdd) {
+    this.productsForSearch.addAll(productsToAdd);
+  }
 }

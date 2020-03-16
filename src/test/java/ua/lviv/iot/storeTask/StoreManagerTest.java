@@ -14,7 +14,7 @@ import ua.lviv.iot.storeTask.Model.AgeGroup;
 
 class StoreManagerTest extends BaseStoreManagerTest {
 
-  private StoreManager storeManager;
+  protected StoreManager storeManager;
   List<AbstractProduct> expectedFoundproducts = new LinkedList<AbstractProduct>();
 
   @BeforeEach

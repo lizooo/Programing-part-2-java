@@ -98,4 +98,12 @@ public abstract class AbstractProduct {
     }
     return temp;
   }
+
+  public String getHeaders() {
+    return "priceInUAH, producer, ageGroup";
+  }
+
+  public String toCSV() {
+    return priceInUAH + ", " + producer + ", " + ageGroup;
+  }
 }

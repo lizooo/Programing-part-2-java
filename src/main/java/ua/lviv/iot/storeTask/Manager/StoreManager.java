@@ -40,4 +40,8 @@ public class StoreManager {
   public void addproducts(List<AbstractProduct> productsToAdd) {
     this.productsForSearch.addAll(productsToAdd);
   }
+  
+  public List<AbstractProduct> getAllAbstractProducts() {
+    return this.productsForSearch;
+  }
 }

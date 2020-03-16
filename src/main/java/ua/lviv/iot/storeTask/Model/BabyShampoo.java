@@ -11,4 +11,12 @@ public class BabyShampoo extends AbstractProduct {
     this.valueInMl = valueInMl;
     this.isForSensitiveEyes = isForSensitiveEyes;
   }
+
+  public String getHeaders() {
+    return super.getHeaders() + ", valueInMl, isForSensitiveEyes";
+  }
+
+  public String toCSV() {
+    return super.toCSV() + ", " + valueInMl + ", " + isForSensitiveEyes;
+  }
 }

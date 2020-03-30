@@ -4,9 +4,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public abstract class AbstractProduct {
+public class AbstractProduct {
 
-  private int idOfTheProdct;
+  private Integer id;
+
   private double priceInUAH;
   private String producer;
   private int shelfLifeInDays;
@@ -14,9 +15,8 @@ public abstract class AbstractProduct {
   protected AgeGroup ageGroup;
   AbstractProduct abstractProduct;
 
-  public AbstractProduct(int id, double priceInUAH, String producer, int shelfLifeInDays,
+  public AbstractProduct( double priceInUAH, String producer, int shelfLifeInDays,
       Date expirationDate, AgeGroup ageGroup) {
-    this.idOfTheProdct = id;
     this.priceInUAH = priceInUAH;
     this.producer = producer;
     this.shelfLifeInDays = shelfLifeInDays;
@@ -24,10 +24,13 @@ public abstract class AbstractProduct {
     this.ageGroup = ageGroup;
   }
 
-  public AbstractProduct(double priceInUAH, String producer, AgeGroup ageGroup) {
-
-    this(0, priceInUAH, producer, 0, null, ageGroup);
-  }
+//  public AbstractProduct(double priceInUAH, String producer, AgeGroup ageGroup) {
+//
+//    this(0, priceInUAH, producer, 0, null, ageGroup);
+//  }
+//  
+//  public AbstractProduct() {
+//  }
 
   public AbstractProduct(final Date expirationDate) {
     this.expirationDate = expirationDate;
@@ -95,6 +98,7 @@ public abstract class AbstractProduct {
         temp = true;
       }
     } catch (NullPointerException e) {
+      e.printStackTrace();
     }
     return temp;
   }
@@ -105,5 +109,13 @@ public abstract class AbstractProduct {
 
   public String toCSV() {
     return priceInUAH + ", " + producer + ", " + ageGroup;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
   }
 }

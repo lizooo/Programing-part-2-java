@@ -13,11 +13,19 @@ public class StoreManagerWriter {
   }
 
   public void writeToFile(List<AbstractProduct> products) throws IOException {
+    try {
     for (AbstractProduct currentProduct : products) {
       writeLine(this.writer, currentProduct.getHeaders());
       writeLine(this.writer, currentProduct.toCSV());
     }
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+    finally{
+    this.writer.close();
     this.writer.flush();
+  }
   }
 
   private void writeLine(Writer writer, String line) throws IOException {

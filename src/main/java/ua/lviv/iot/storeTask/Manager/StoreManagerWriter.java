@@ -3,7 +3,7 @@ package ua.lviv.iot.storeTask.Manager;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
-import ua.lviv.iot.storeTask.Model.AbstractProduct;
+import ua.lviv.iot.storeTask.Model.Product;
 
 public class StoreManagerWriter {
   private Writer writer;
@@ -12,12 +12,20 @@ public class StoreManagerWriter {
     this.writer = writer;
   }
 
-  public void writeToFile(List<AbstractProduct> products) throws IOException {
-    for (AbstractProduct currentProduct : products) {
+  public void writeToFile(List<Product> products) throws IOException {
+    try {
+    for (Product currentProduct : products) {
       writeLine(this.writer, currentProduct.getHeaders());
       writeLine(this.writer, currentProduct.toCSV());
     }
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+    finally{
+    this.writer.close();
     this.writer.flush();
+  }
   }
 
   private void writeLine(Writer writer, String line) throws IOException {

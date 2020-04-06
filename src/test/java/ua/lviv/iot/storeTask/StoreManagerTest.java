@@ -9,13 +9,13 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ua.lviv.iot.storeTask.Manager.StoreManager;
-import ua.lviv.iot.storeTask.Model.AbstractProduct;
+import ua.lviv.iot.storeTask.Model.Product;
 import ua.lviv.iot.storeTask.Model.AgeGroup;
 
 class StoreManagerTest extends BaseStoreManagerTest {
 
   protected StoreManager storeManager;
-  List<AbstractProduct> expectedFoundproducts = new LinkedList<AbstractProduct>();
+  List<Product> expectedFoundproducts = new LinkedList<Product>();
 
   @BeforeEach
   public void setUp() {
@@ -25,7 +25,7 @@ class StoreManagerTest extends BaseStoreManagerTest {
 
   @Test
   public void testFindByPrice() {
-    List<AbstractProduct> foundProducts = storeManager.findByPrice(60.00);
+    List<Product> foundProducts = storeManager.findByPrice(60.00);
     assertEquals(4, foundProducts.size());
     assertEquals(75.25, foundProducts.get(0).getPriceInUAH());
     assertEquals(90.00, foundProducts.get(1).getPriceInUAH());
@@ -34,7 +34,7 @@ class StoreManagerTest extends BaseStoreManagerTest {
 
   @Test
   public void testFindForAgeGroup() {
-    List<AbstractProduct> foundProducts = storeManager.findForAgeGroup(AgeGroup.ONE_TWO_MONTH);
+    List<Product> foundProducts = storeManager.findForAgeGroup(AgeGroup.ONE_TWO_MONTH);
     assertEquals(1, foundProducts.size());
   }
 

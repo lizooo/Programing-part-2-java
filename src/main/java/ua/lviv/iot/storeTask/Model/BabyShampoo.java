@@ -1,6 +1,6 @@
 package ua.lviv.iot.storeTask.Model;
 
-public class BabyShampoo extends AbstractProduct {
+public class BabyShampoo extends Product {
 
   private int valueInMl;
   private boolean isForSensitiveEyes;

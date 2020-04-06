@@ -1,6 +1,6 @@
 package ua.lviv.iot.storeTask.Model;
 
-public class BabyPowder extends AbstractProduct {
+public class BabyPowder extends Product {
 
   private int valueInGr;
   private boolean isTranslucent;

@@ -2,7 +2,7 @@ package ua.lviv.iot.storeTask.Model;
 
 import java.util.Date;
 
-public class BabyOil extends AbstractProduct {
+public class BabyOil extends Product {
 
   private int valueInMl;
   private boolean isForSensitiveSkin;
@@ -16,7 +16,7 @@ public class BabyOil extends AbstractProduct {
 
   public BabyOil(int iD, double priceInUAH, String producer, int shelfLifeInDays,
       Date expirationDate, AgeGroup ageGroup) {
-    super(iD, priceInUAH, producer, shelfLifeInDays, expirationDate, ageGroup);
+    super(iD, producer, shelfLifeInDays, expirationDate, ageGroup);
   }
 
   public String getHeaders() {

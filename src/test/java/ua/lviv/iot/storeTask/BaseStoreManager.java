@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
-import ua.lviv.iot.storeTask.Model.AbstractProduct;
+import ua.lviv.iot.storeTask.Model.Product;
 import ua.lviv.iot.storeTask.Model.AgeGroup;
 import ua.lviv.iot.storeTask.Model.BabyOil;
 import ua.lviv.iot.storeTask.Model.BabyPowder;
@@ -14,12 +14,12 @@ import ua.lviv.iot.storeTask.Model.BabyShampoo;
 
 class BaseStoreManagerTest {
 
-  protected List<AbstractProduct> products;
+  protected List<Product> products;
   private SimpleDateFormat sdfExpirationDate = new SimpleDateFormat("dd-MM-yyyy");
 
   @BeforeEach
   public void addproductToStore() throws ParseException {
-    products = new LinkedList<AbstractProduct>();
+    products = new LinkedList<Product>();
     products.add(new BabyPowder(75.25, "Dove", AgeGroup.ONE_TWO_MONTH, 200, true));
     products.add(new BabyShampoo(90.00, "Johnson Baby", AgeGroup.SEVEN_NINE_MONTH, 150, false));
     products.add(new BabyOil(150.75, "Nivea", AgeGroup.THREE_SIX_MONTH, 100, true));
